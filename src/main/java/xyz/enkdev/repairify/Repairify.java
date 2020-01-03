@@ -9,6 +9,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import net.minecraftforge.fml.loading.FMLPaths;
+import net.minecraftforge.fml.network.NetworkRegistry;
+import net.minecraftforge.fml.network.simple.SimpleChannel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,6 +18,7 @@ import xyz.enkdev.repairify.api.ClientProxy;
 import xyz.enkdev.repairify.api.IProxy;
 import xyz.enkdev.repairify.api.ServerProxy;
 import xyz.enkdev.repairify.config.RepairifyConfig;
+import xyz.enkdev.repairify.network.RepairifyPacketHandler;
 import xyz.enkdev.repairify.registry.KeyBindingRegistry;
 
 @Mod(Repairify.MOD_ID)
@@ -46,5 +49,6 @@ public class Repairify
     {
         // Do networking stuff here later after we got Networking down.
         proxy.init();
+        RepairifyPacketHandler.init();
     }
 }

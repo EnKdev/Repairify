@@ -32,8 +32,9 @@ public class RepairifyConfig
     static
     {
         COMMON_BUILDER.comment("Repairify 2.0.0 | Settings").push(CATEGORY_SETTINGS);
-        setupGeneralConfig();
         COMMON_BUILDER.pop();
+
+        setupGeneralConfig();
 
         COMMON_CONFIG = COMMON_BUILDER.build();
         CLIENT_CONFIG = CLIENT_BUILDER.build();
