@@ -29,11 +29,10 @@ displayURL="https://www.curseforge.com/minecraft/mc-mods/repairify" #optional
 authors="EnK_, Virtuoel" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-This is a long form description of the mod. You can write whatever you want here
+Repairify is a small mod which grants you to instantly repair your weapons and tools by a keybind, the only condition is that you have an exact duplicate of said item in your inventory.
 
-Have some lorem ipsum.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sagittis luctus odio eu tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque volutpat ligula eget lacus auctor sagittis. In hac habitasse platea dictumst. Nunc gravida elit vitae sem vehicula efficitur. Donec mattis ipsum et arcu lobortis, eleifend sagittis sem rutrum. Cras pharetra quam eget posuere fermentum. Sed id tincidunt justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+This mod was made with the thought of speeding the repairing process up by removing or making the need of opening the inventory completely optional, as it makes repairs on the go.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 # [[dependencies.examplemod]] #optional

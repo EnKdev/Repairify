@@ -52,7 +52,7 @@ public class RepairifyConfig
         REPAIR_SOUND = COMMON_BUILDER
                 .comment("The sound which plays upon a successful repair.")
                 .translation(Repairify.MOD_ID + ".config.repairSound")
-                .define("repairSound", "minecraft:entity.experience_orb_pickup");
+                .define("repairSound", "minecraft:entity.experience_orb.pickup");
 
         SOUND_PITCH = COMMON_BUILDER
                 .comment("The pitch of the sound. The higher the pitch, the higher the sound.")

@@ -48,9 +48,9 @@ public class KeyBindingRegistry
                 player.world.playSound(
                         player, player.posX, player.posY, player.posZ,
                         ForgeRegistries.SOUND_EVENTS.getValue(
-                                new ResourceLocation(RepairifyConfig.REPAIR_SOUND.toString())
+                                new ResourceLocation(RepairifyConfig.REPAIR_SOUND.get())
                         ),
-                        SoundCategory.AMBIENT, RepairifyConfig.SOUND_VOLUME.get().floatValue(), RepairifyConfig.SOUND_PITCH.get().floatValue()
+                        SoundCategory.AMBIENT, ((float) RepairifyConfig.SOUND_VOLUME.get().doubleValue()), ((float) RepairifyConfig.SOUND_PITCH.get().doubleValue())
                 );
             }
         }
