@@ -1,0 +1,9 @@
+{
+  "_comment": "Key Translations",
+  "key.categories.repairify": "Repairify Keybinds",
+  "key.repairify.repairItem": "Repair Item",
+  "repairify.config.repairBlackList": "Item Blacklist",
+  "repairify.config.repairSound": "Repair Sound",
+  "repairify.config.soundPitch": "Sound Pitch",
+  "repairify.config.soundVolume": "Sound Volume"
+}
