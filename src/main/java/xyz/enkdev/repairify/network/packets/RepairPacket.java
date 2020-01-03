@@ -26,9 +26,10 @@ public class RepairPacket
 
     public static void handle(RepairPacket msg, Supplier<NetworkEvent.Context> ctx)
     {
-        ctx.get().enqueueWork(() -> {
-            ServerPlayerEntity sender = ctx.get().getSender();
+        ServerPlayerEntity sender = ctx.get().getSender();
 
+        ctx.get().enqueueWork(() ->
+        {
             int slot = KeyBindingRegistry.getItemToRepairInSlot(sender);
             ItemStack held = sender.getHeldItemMainhand();
 
@@ -53,6 +54,8 @@ public class RepairPacket
                 sender.setHeldItem(Hand.MAIN_HAND, held);
             }
         });
+
+        ctx.get().setPacketHandled(true);
     }
 
     public static RepairPacket decode(PacketBuffer buf)
