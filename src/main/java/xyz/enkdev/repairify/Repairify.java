@@ -14,9 +14,6 @@ import net.minecraftforge.fml.network.simple.SimpleChannel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import xyz.enkdev.repairify.api.ClientProxy;
-import xyz.enkdev.repairify.api.IProxy;
-import xyz.enkdev.repairify.api.ServerProxy;
 import xyz.enkdev.repairify.config.RepairifyConfig;
 import xyz.enkdev.repairify.network.RepairifyPacketHandler;
 import xyz.enkdev.repairify.registry.KeyBindingRegistry;
@@ -26,7 +23,6 @@ public class Repairify
 {
     public static final String MOD_ID = "repairify";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static final IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
     public Repairify()
     {
@@ -46,8 +42,6 @@ public class Repairify
 
     public static void setup(FMLCommonSetupEvent event)
     {
-        // Do networking stuff here later after we got Networking down.
-        proxy.init();
         RepairifyPacketHandler.init();
     }
 }
