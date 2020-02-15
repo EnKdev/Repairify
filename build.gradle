@@ -43,7 +43,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                repairify {
                     source sourceSets.main
                 }
             }
@@ -59,7 +59,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                repairify {
                     source sourceSets.main
                 }
             }
@@ -74,10 +74,10 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/')
+            args '--mod', 'repairify', '--all', '--output', file('src/generated/resources/')
 
             mods {
-                examplemod {
+                repairify {
                     source sourceSets.main
                 }
             }
@@ -135,6 +135,7 @@ def reobfArtifact = artifacts.add('default', reobfFile) {
     type 'jar'
     builtBy 'reobfJar'
 }
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
