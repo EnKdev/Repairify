@@ -5,10 +5,7 @@ import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import xyz.enkdev.repairify.Repairify;
 import xyz.enkdev.repairify.config.RepairifyConfig;
@@ -17,10 +14,8 @@ import xyz.enkdev.repairify.network.packets.RepairPacket;
 import xyz.enkdev.repairify.registry.KeyBindingRegistry;
 import xyz.enkdev.repairify.util.RepairUtils;
 
-@Mod.EventBusSubscriber(modid = Repairify.MOD_ID, value = Dist.CLIENT)
 public class KeybindEvents
 {
-    @SubscribeEvent
     public static void handleRepairOnKeybindStroke(InputEvent.KeyInputEvent event)
     {
         ClientPlayerEntity player = Minecraft.getInstance().player;
