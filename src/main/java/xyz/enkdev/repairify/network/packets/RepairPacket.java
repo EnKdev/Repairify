@@ -6,21 +6,13 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.Hand;
 import net.minecraftforge.fml.network.NetworkEvent;
 import xyz.enkdev.repairify.config.RepairifyConfig;
-import xyz.enkdev.repairify.registry.KeyBindingRegistry;
+import xyz.enkdev.repairify.util.RepairUtils;
 
-import java.util.Arrays;
 import java.util.function.Supplier;
 
 public class RepairPacket
 {
-    private int key;
-
-    public RepairPacket(int key)
-    {
-        this.key = key;
-    }
-
-    private RepairPacket()
+    public RepairPacket()
     {
     }
 
@@ -30,15 +22,15 @@ public class RepairPacket
 
         ctx.get().enqueueWork(() ->
         {
-            int slot = KeyBindingRegistry.getItemToRepairInSlot(sender);
+            int slot = RepairUtils.getItemToRepairInSlot(sender);
             ItemStack held = sender.getHeldItemMainhand();
 
             if (slot != -1 &&
-                    !Arrays.asList(RepairifyConfig.REPAIR_BLACKLIST)
-                            .contains(sender.getHeldItemMainhand()
-                                    .getItem()
-                                    .getRegistryName()
-                                    .toString()))
+                !RepairifyConfig.REPAIR_BLACKLIST.get()
+                .contains(
+                    held.getItem()
+                    .getRegistryName()
+                    .toString()))
             {
                 ItemStack inv = sender.inventory.getStackInSlot(slot);
 
@@ -60,13 +52,10 @@ public class RepairPacket
 
     public static RepairPacket decode(PacketBuffer buf)
     {
-        RepairPacket message = new RepairPacket();
-        message.key = buf.readInt();
-        return message;
+        return new RepairPacket();
     }
 
     public static void encode(RepairPacket msg, PacketBuffer buf)
     {
-        buf.writeInt(msg.key);
     }
 }
