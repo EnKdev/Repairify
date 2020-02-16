@@ -31,7 +31,7 @@ public class RepairifyConfig
 
     static
     {
-        COMMON_BUILDER.comment("Repairify 2.0.0 | Settings").push(CATEGORY_SETTINGS);
+        COMMON_BUILDER.comment("Repairify 3.0.0 | Settings").push(CATEGORY_SETTINGS);
         COMMON_BUILDER.pop();
 
         setupGeneralConfig();
@@ -85,7 +85,7 @@ public class RepairifyConfig
     }
 
     @SubscribeEvent
-    public static void onReload(final ModConfig.ConfigReloading configEvent)
+    public static void onReload(final ModConfig.Reloading configEvent)
     {
     }
 }

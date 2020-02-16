@@ -38,7 +38,7 @@ public class KeybindEvents
                 if (sound != null)
                 {
                     Minecraft.getInstance().world.playSound(
-                        player.posX, player.posY, player.posZ,
+                        player.getPosX(), player.getPosY(), player.getPosZ(),
                         sound,
                         SoundCategory.AMBIENT,
                         RepairifyConfig.SOUND_VOLUME.get().floatValue(),
