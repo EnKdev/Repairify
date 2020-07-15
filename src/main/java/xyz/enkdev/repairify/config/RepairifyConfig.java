@@ -19,30 +19,33 @@ public class RepairifyConfig
     public static final String CATEGORY_GENERAL = "general";
 
     private static final ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
-    private static final ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
 
     public static ForgeConfigSpec COMMON_CONFIG;
-    public static ForgeConfigSpec CLIENT_CONFIG;
 
     public static ForgeConfigSpec.ConfigValue<List<String>> REPAIR_BLACKLIST;
     public static ForgeConfigSpec.ConfigValue<String> REPAIR_SOUND;
     public static ForgeConfigSpec.DoubleValue SOUND_PITCH;
     public static ForgeConfigSpec.DoubleValue SOUND_VOLUME;
+    public static ForgeConfigSpec.IntValue NOTIFICATIONS;
 
     static
     {
-        COMMON_BUILDER.comment("Repairify 3.0.0 | Settings").push(CATEGORY_SETTINGS);
+        COMMON_BUILDER.comment("Repairify 4.0.0 | Settings").push(CATEGORY_SETTINGS);
         COMMON_BUILDER.pop();
 
         setupGeneralConfig();
 
         COMMON_CONFIG = COMMON_BUILDER.build();
-        CLIENT_CONFIG = CLIENT_BUILDER.build();
     }
 
     private static void setupGeneralConfig()
     {
         COMMON_BUILDER.comment("General Settings").push(CATEGORY_GENERAL);
+
+        NOTIFICATIONS = COMMON_BUILDER
+                .comment("The way you are notified after a successful repair.")
+                .translation(Repairify.MOD_ID + ".config.notifications")
+                .defineInRange("notifications", 0, 0, 2);
 
         REPAIR_BLACKLIST = COMMON_BUILDER
                 .comment("Items which shouldn't be repaired with this mod. Use this if you're making a Modpack.")

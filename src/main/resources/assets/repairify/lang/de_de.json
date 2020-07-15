@@ -5,5 +5,7 @@
   "repairify.config.repairBlackList": "Item Blacklist",
   "repairify.config.repairSound": "Sound",
   "repairify.config.soundPitch": "Soundhöhe",
-  "repairify.config.soundVolume": "Lautstärke"
+  "repairify.config.soundVolume": "Lautstärke",
+  "repairify.notifications": "Benachrichtigungen",
+  "repairify.chatNotifier": "Dein Item wurde repariert!"
 }
